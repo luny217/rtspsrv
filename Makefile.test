@@ -1,0 +1,83 @@
+CROSS_COMPILE	= arm-hisiv300-linux-
+AR				= $(CROSS_COMPILE)ar
+CC				= $(CROSS_COMPILE)gcc
+
+HBLIB_PATH = ../lib_arm
+HBINC_PATH = ./
+CFLAGS := -std=c99 -D_LINUX -D_ISOC99_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DHAVE_AV_CONFIG_H -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 \
+				-fomit-frame-pointer -fPIC -pthread -Wno-unused -fno-strict-aliasing -Wno-missing-field-initializers \
+				 -I./src -I./src/libavcodec -I./src/libavformat -I./src/libavutil -I./src/librtspsrv -I./src/libcyassl -I../../../inc/base -L../../../lib
+
+SRCS =	src/libavcodec/avcodec_allcodecs.c \
+				src/libavcodec/avcodec_avpacket.c \
+				src/libavcodec/avcodec_cabac.c \
+				src/libavcodec/avcodec_codec_desc.c \
+				src/libavcodec/avcodec_golomb.c \
+				src/libavcodec/avcodec_h264.c \
+				src/libavcodec/avcodec_h264_parser.c \
+				src/libavcodec/avcodec_h264_ps.c \
+				src/libavcodec/avcodec_hevc.c \
+				src/libavcodec/avcodec_hevc_cabac.c \
+				src/libavcodec/avcodec_hevc_parser.c \
+				src/libavcodec/avcodec_hevc_ps.c \
+				src/libavcodec/avcodec_mathtables.c \
+				src/libavcodec/avcodec_options.c \
+				src/libavcodec/avcodec_parser.c \
+				src/libavcodec/avcodec_startcode.c \
+				src/libavcodec/avcodec_utils.c \
+				src/libavformat/avformat_allformats.c \
+				src/libavformat/avformat_avc.c \
+				src/libavformat/avformat_avio.c \
+				src/libavformat/avformat_aviobuf.c \
+				src/libavformat/avformat_file.c \
+				src/libavformat/avformat_format.c \
+				src/libavformat/avformat_h264dec.c \
+				src/libavformat/avformat_hevcdec.c \
+				src/libavformat/avformat_mux.c \
+				src/libavformat/avformat_network.c \
+				src/libavformat/avformat_options.c \
+				src/libavformat/avformat_os_support.c \
+				src/libavformat/avformat_pcmdec.c \
+				src/libavformat/avformat_pcmenc.c \
+				src/libavformat/avformat_pcm.c \
+				src/libavformat/avformat_rawdec.c \
+				src/libavformat/avformat_rawenc.c \
+				src/libavformat/avformat_utils.c \
+				src/libavutil/avutil_atomic.c \
+				src/libavutil/avutil_base64.c \
+				src/libavutil/avutil_buffer.c \
+				src/libavutil/avutil_crc.c \
+				src/libavutil/avutil_dict.c \
+				src/libavutil/avutil_error.c \
+				src/libavutil/avutil_eval.c \
+				src/libavutil/avutil_fifo.c \
+				src/libavutil/avutil_file.c \
+				src/libavutil/avutil_imgutils.c \
+				src/libavutil/avutil_integer.c \
+				src/libavutil/avutil_intfloat_readwrite.c \
+				src/libavutil/avutil_intmath.c \
+				src/libavutil/avutil_lfg.c \
+				src/libavutil/avutil_log2_tab.c \
+				src/libavutil/avutil_mem.c \
+				src/libavutil/avutil_md5.c \
+				src/libavutil/avutil_opt.c \
+				src/libavutil/avutil_parseutils.c \
+				src/libavutil/avutil_pixdesc.c \
+				src/libavutil/avutil_random_seed.c \
+				src/libavutil/avutil_rational.c \
+				src/libavutil/avutil_bprint.c \
+				src/libavutil/avutil_file_open.c \
+				src/libavutil/avutil_log.c \
+				test/rtsp_server.c
+				
+OBJS = $(SRCS:%.c=%.o)
+
+TARGET := rtspsrv
+.PHONY : clean all
+
+$(TARGET):$(OBJS)
+	$(CC) $(CFLAGS)  -o $@ $^ -lrtspsrv -lmshead -lcommon -lcyassl -ldl -lm -lpthread -lrt
+	cp $(TARGET)  /nfs/smart_ipc/
+clean:
+	@rm -f $(TARGET)
+	@rm -f $(OBJS)

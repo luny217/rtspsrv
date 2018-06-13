@@ -1,17 +1,603 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="src">
+      <UniqueIdentifier>{cd42b292-a8e6-412c-b9de-f5aee478e6bf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="src\libavcodec">
+      <UniqueIdentifier>{d2c21bff-cc02-4dc8-be85-5324c82f3617}</UniqueIdentifier>
     </Filter>
-    <Filter Include="资源文件">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="src\libavformat">
+      <UniqueIdentifier>{5ebcede9-0ebd-4c6e-86a7-4f3afa071ab9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\libavutil">
+      <UniqueIdentifier>{aae5158f-1be9-4f31-8a13-7200f5c32955}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\libcommon">
+      <UniqueIdentifier>{bc48cdc0-b484-4fc5-8cb2-27d0701095ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\libepoll">
+      <UniqueIdentifier>{d4ac7cee-8318-468d-a4d5-07297e9e7d74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\librtspsrv">
+      <UniqueIdentifier>{ad5103ba-4134-4532-abcf-bd6e16420b7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\libcommon\include">
+      <UniqueIdentifier>{e85f43bc-4eb1-497c-a97b-3cb48db5884f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\libavcodec\avcodec_h264chroma.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_h264data.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_h264dsp.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_h264idct.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_h264pred.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_h264qpel.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_idctdsp.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_iirfilter.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_imcdata.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_internal.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_mathops.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_mjpeg.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_mpegutils.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_old_codec_ids.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_options_table.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_parser.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_pixels.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_put_bits.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_qpeldsp.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_rdft.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_rectangle.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_rnd_avg.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_simple_idct.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_startcode.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_ulti_cb.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_unary.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_version.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_bytestream.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_cabac.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_cabac_functions.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_get_bits.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_golomb.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_h264.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavcodec\avcodec_h264_mvpred.h">
+      <Filter>src\libavcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_avc.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_avio.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_avio_internal.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_internal.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_metadata.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_network.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_options_table.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_os_support.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_rawdec.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_version.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_atomic.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_atomic_gcc.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_atomic_suncc.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_atomic_win32.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_attributes.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_audio_fifo.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_avassert.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_avconfig.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_avstring.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_base64.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_bprint.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_bswap.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_buffer.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_buffer_internal.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_common.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_crc.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_dict.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_dynarray.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_error.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_eval.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_ffversion.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_fifo.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_file.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_frame.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_hash.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_imgutils.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_integer.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_internal.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_intfloat.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_intfloat_readwrite.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_intmath.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_intreadwrite.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_libm.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_log.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_macros.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_md5.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_mem.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_old_pix_fmts.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_opt.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_parseutils.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_pixdesc.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_pixfmt.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_qsort.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_random_seed.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_rational.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_samplefmt.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_time.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_timer.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_timestamp.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavutil\avutil_version.h">
+      <Filter>src\libavutil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libcommon\include\common.h">
+      <Filter>src\libcommon\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libcommon\include\defines.h">
+      <Filter>src\libcommon\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libcommon\include\fifo.h">
+      <Filter>src\libcommon\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libcommon\include\sstring.h">
+      <Filter>src\libcommon\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libepoll\msafd.h">
+      <Filter>src\libepoll</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libepoll\ntapi.h">
+      <Filter>src\libepoll</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libepoll\tree.h">
+      <Filter>src\libepoll</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ffconfig_win32.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ffconfig.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\librtspsrv\rtspsrv_handler.h">
+      <Filter>src\librtspsrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\librtspsrv\rtspsrv_rtp.h">
+      <Filter>src\librtspsrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\librtspsrv\rtspsrv_session.h">
+      <Filter>src\librtspsrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\librtspsrv\rtspsrv_stream.h">
+      <Filter>src\librtspsrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\librtspsrv\rtspsrv_utils.h">
+      <Filter>src\librtspsrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\librtspsrv\rtspsrv.h">
+      <Filter>src\librtspsrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\librtspsrv\rtspsrv_epoll.h">
+      <Filter>src\librtspsrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\librtspsrv\rtspsrv_adapter.h">
+      <Filter>src\librtspsrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\librtspsrv\rtspsrv_defines.h">
+      <Filter>src\librtspsrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_pcm.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\librtspsrv\rtspsrv_nlist.h">
+      <Filter>src\librtspsrv</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\libavcodec\avcodec_allcodecs.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_avpacket.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_cabac.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_codec_desc.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_golomb.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_h264.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_h264_parser.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_h264_ps.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_mathtables.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_options.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_parser.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_startcode.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_utils.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_mux.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_options.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_os_support.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_rawdec.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_utils.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_allformats.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_avc.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_avio.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_aviobuf.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_file.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_format.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_h264dec.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_dict.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_error.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_eval.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_fifo.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_file.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_file_open.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_imgutils.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_integer.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_intfloat_readwrite.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_intmath.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_log.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_log2_tab.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_md5.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_mem.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_opt.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_parseutils.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_random_seed.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_rational.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_time.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_utils.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_atomic.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_avstring.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_base64.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_bprint.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_buffer.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_crc.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libcommon\fifo.c">
+      <Filter>src\libcommon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libcommon\sstring.c">
+      <Filter>src\libcommon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libcommon\common.c">
+      <Filter>src\libcommon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libepoll\epoll.c">
+      <Filter>src\libepoll</Filter>
+    </ClCompile>
+    <ClCompile Include="test\rtsp_server.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\librtspsrv\rtspsrv_handler.c">
+      <Filter>src\librtspsrv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\librtspsrv\rtspsrv_stream.c">
+      <Filter>src\librtspsrv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\librtspsrv\rtspsrv.c">
+      <Filter>src\librtspsrv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\librtspsrv\rtspsrv_epoll.c">
+      <Filter>src\librtspsrv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\librtspsrv\rtspsrv_utils.c">
+      <Filter>src\librtspsrv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libcommon\mshead.c">
+      <Filter>src\libcommon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\librtspsrv\rtspsrv_adapter.c">
+      <Filter>src\librtspsrv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_pcmdec.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_pcmenc.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_pcm.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\librtspsrv\rtspsrv_nlist.c">
+      <Filter>src\librtspsrv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_network.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_mathematics.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavutil\avutil_pixdesc.c">
+      <Filter>src\libavutil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_hevcdec.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_hevc_parser.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_hevc.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_hevc_ps.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavcodec\avcodec_hevc_cabac.c">
+      <Filter>src\libavcodec</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

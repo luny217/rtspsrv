@@ -1,0 +1,183 @@
+src/libavutil/avutil_avstring.o: src/libavutil/avutil_avstring.c \
+ ../../..//inc/base/mem_manage.h ../../..//inc/base/common.h \
+ ../../..//inc/base/defines.h ../../..//inc/base/cli.h src/ffconfig.h \
+ src/ffconfig_gcc.h src/libavutil/avutil_common.h \
+ src/libavutil/avutil_attributes.h src/libavutil/avutil_version.h \
+ src/libavutil/avutil_macros.h src/libavutil/avutil_avconfig.h \
+ src/libavutil/avutil_intmath.h src/libavutil/avutil_mem.h \
+ src/libavutil/avutil_error.h src/libavutil/avutil.h \
+ src/libavutil/avutil_rational.h src/libavutil/avutil_mathematics.h \
+ src/libavutil/avutil_intfloat.h src/libavutil/avutil_log.h \
+ src/libavutil/avutil_pixfmt.h src/libavutil/avutil_avconfig.h \
+ src/libavutil/avutil_old_pix_fmts.h src/libavutil/avutil_internal.h \
+ src/libavutil/avutil_timer.h src/libavutil/avutil_dict.h \
+ src/libavutil/avutil_libm.h src/libavutil/avutil_avstring.h \
+ src/libavutil/avutil_bprint.h
+src/libavutil/avutil_mathematics.o: src/libavutil/avutil_mathematics.c \
+ src/libavutil/avutil_mathematics.h src/libavutil/avutil_attributes.h \
+ src/ffconfig.h src/ffconfig_gcc.h src/libavutil/avutil_rational.h \
+ src/libavutil/avutil_intfloat.h src/libavutil/avutil_common.h \
+ src/libavutil/avutil_attributes.h src/libavutil/avutil_version.h \
+ src/libavutil/avutil_macros.h src/libavutil/avutil_avconfig.h \
+ src/libavutil/avutil_intmath.h src/libavutil/avutil_common.h \
+ src/libavutil/avutil_mem.h src/libavutil/avutil_error.h \
+ src/libavutil/avutil.h src/libavutil/avutil_rational.h \
+ src/libavutil/avutil_mathematics.h src/libavutil/avutil_log.h \
+ src/libavutil/avutil_pixfmt.h src/libavutil/avutil_avconfig.h \
+ src/libavutil/avutil_old_pix_fmts.h src/libavutil/avutil_internal.h \
+ src/libavutil/avutil_timer.h src/libavutil/avutil_dict.h \
+ src/libavutil/avutil_libm.h src/libavutil/avutil_intfloat.h \
+ src/libavutil/avutil_avassert.h src/libavutil/avutil.h \
+ src/libavutil/avutil_log.h src/libavutil/avutil_version.h
+src/libavutil/avutil_random_seed.o: src/libavutil/avutil_random_seed.c \
+ src/ffconfig.h src/ffconfig_gcc.h src/libavutil/avutil_avassert.h \
+ src/libavutil/avutil.h src/libavutil/avutil_common.h \
+ src/libavutil/avutil_attributes.h src/libavutil/avutil_version.h \
+ src/libavutil/avutil_macros.h src/libavutil/avutil_avconfig.h \
+ src/libavutil/avutil_intmath.h src/libavutil/avutil_mem.h \
+ src/libavutil/avutil_error.h src/libavutil/avutil_internal.h \
+ src/libavutil/avutil_timer.h src/libavutil/avutil_log.h \
+ src/libavutil/avutil_dict.h src/libavutil/avutil_libm.h \
+ src/libavutil/avutil_intfloat.h src/libavutil/avutil_rational.h \
+ src/libavutil/avutil_mathematics.h src/libavutil/avutil_pixfmt.h \
+ src/libavutil/avutil_avconfig.h src/libavutil/avutil_old_pix_fmts.h \
+ src/libavutil/avutil_intreadwrite.h src/libavutil/avutil_bswap.h \
+ src/libavutil/avutil_random_seed.h
+src/libavutil/avutil_time.o: src/libavutil/avutil_time.c src/ffconfig.h \
+ src/ffconfig_gcc.h src/libavutil/avutil_time.h \
+ src/libavutil/avutil_error.h
+src/libavutil/avutil_utils.o: src/libavutil/avutil_utils.c src/ffconfig.h \
+ src/ffconfig_gcc.h src/libavutil/avutil.h src/libavutil/avutil_common.h \
+ src/libavutil/avutil_attributes.h src/libavutil/avutil_version.h \
+ src/libavutil/avutil_macros.h src/libavutil/avutil_avconfig.h \
+ src/libavutil/avutil_intmath.h src/libavutil/avutil_mem.h \
+ src/libavutil/avutil_error.h src/libavutil/avutil_internal.h \
+ src/libavutil/avutil_timer.h src/libavutil/avutil_log.h \
+ src/libavutil/avutil_dict.h src/libavutil/avutil_libm.h \
+ src/libavutil/avutil_intfloat.h src/libavutil/avutil_rational.h \
+ src/libavutil/avutil_mathematics.h src/libavutil/avutil_pixfmt.h \
+ src/libavutil/avutil_avconfig.h src/libavutil/avutil_old_pix_fmts.h \
+ src/libavutil/avutil_avassert.h src/libavutil/avutil_pixdesc.h
+src/librtspsrv/rtspsrv.o: src/librtspsrv/rtspsrv.c \
+ src/libavformat/avformat_network.h src/ffconfig.h src/ffconfig_gcc.h \
+ src/libavutil/avutil_error.h src/libavformat/avformat_os_support.h \
+ src/libavformat/avformat_avio.h src/libavutil/avutil_common.h \
+ src/libavutil/avutil_attributes.h src/libavutil/avutil_version.h \
+ src/libavutil/avutil_macros.h src/libavutil/avutil_avconfig.h \
+ src/libavutil/avutil_intmath.h src/libavutil/avutil_common.h \
+ src/libavutil/avutil_mem.h src/libavutil/avutil_error.h \
+ src/libavutil/avutil.h src/libavutil/avutil_rational.h \
+ src/libavutil/avutil_mathematics.h src/libavutil/avutil_intfloat.h \
+ src/libavutil/avutil_log.h src/libavutil/avutil_pixfmt.h \
+ src/libavutil/avutil_avconfig.h src/libavutil/avutil_old_pix_fmts.h \
+ src/libavutil/avutil_internal.h src/libavutil/avutil_timer.h \
+ src/libavutil/avutil_dict.h src/libavutil/avutil_libm.h \
+ src/libavutil/avutil_dict.h src/libavutil/avutil_log.h \
+ src/libavformat/avformat_version.h src/libavutil/avutil_version.h \
+ src/libavformat/avformat_url.h src/libavutil/avutil_time.h \
+ src/libavutil/avutil_avstring.h src/libavutil/avutil_random_seed.h \
+ ../../..//inc/base/sstring.h ../../..//inc/base/common.h \
+ ../../..//inc/base/defines.h ../../..//inc/base/cli.h \
+ ../../..//inc/base/fifo.h src/librtspsrv/rtspsrv_session.h \
+ ../../..//inc/base/defines.h src/librtspsrv/rtspsrv_nlist.h \
+ src/librtspsrv/rtspsrv_defines.h src/librtspsrv/rtspsrv_rtp.h \
+ src/librtspsrv/rtspsrv_epoll.h src/librtspsrv/rtspsrv_stream.h \
+ src/librtspsrv/rtspsrv_handler.h src/librtspsrv/rtspsrv_utils.h \
+ src/librtspsrv/rtspsrv.h ../../..//inc/base/mem_manage.h \
+ ../../..//inc/sys/sys_netapi.h ../../..//inc/sys/sys_net.h \
+ ../../..//inc/base/mshead.h ../../..//inc/sys/cli_stat.h \
+ ../../..//inc/base/common.h
+src/librtspsrv/rtspsrv_adapter.o: src/librtspsrv/rtspsrv_adapter.c \
+ src/libavutil/avutil_random_seed.h ../../..//inc/base/sstring.h \
+ ../../..//inc/base/common.h ../../..//inc/base/defines.h \
+ ../../..//inc/base/cli.h src/librtspsrv/rtspsrv_defines.h \
+ src/librtspsrv/rtspsrv_utils.h ../../..//inc/base/defines.h
+src/librtspsrv/rtspsrv_epoll.o: src/librtspsrv/rtspsrv_epoll.c \
+ src/ffconfig.h src/ffconfig_gcc.h src/librtspsrv/rtspsrv_defines.h \
+ src/librtspsrv/rtspsrv_epoll.h ../../..//inc/base/common.h \
+ ../../..//inc/base/defines.h ../../..//inc/base/cli.h
+src/librtspsrv/rtspsrv_handler.o: src/librtspsrv/rtspsrv_handler.c \
+ src/libavformat/avformat_network.h src/ffconfig.h src/ffconfig_gcc.h \
+ src/libavutil/avutil_error.h src/libavformat/avformat_os_support.h \
+ src/libavformat/avformat_avio.h src/libavutil/avutil_common.h \
+ src/libavutil/avutil_attributes.h src/libavutil/avutil_version.h \
+ src/libavutil/avutil_macros.h src/libavutil/avutil_avconfig.h \
+ src/libavutil/avutil_intmath.h src/libavutil/avutil_common.h \
+ src/libavutil/avutil_mem.h src/libavutil/avutil_error.h \
+ src/libavutil/avutil.h src/libavutil/avutil_rational.h \
+ src/libavutil/avutil_mathematics.h src/libavutil/avutil_intfloat.h \
+ src/libavutil/avutil_log.h src/libavutil/avutil_pixfmt.h \
+ src/libavutil/avutil_avconfig.h src/libavutil/avutil_old_pix_fmts.h \
+ src/libavutil/avutil_internal.h src/libavutil/avutil_timer.h \
+ src/libavutil/avutil_dict.h src/libavutil/avutil_libm.h \
+ src/libavutil/avutil_dict.h src/libavutil/avutil_log.h \
+ src/libavformat/avformat_version.h src/libavutil/avutil_version.h \
+ src/libavformat/avformat_url.h src/libavutil/avutil_time.h \
+ src/libavutil/avutil_avstring.h src/libavutil/avutil_random_seed.h \
+ ../../..//inc/base/sstring.h ../../..//inc/base/common.h \
+ ../../..//inc/base/defines.h ../../..//inc/base/cli.h \
+ ../../..//inc/base/fifo.h ../../..//inc/base/mshead.h \
+ src/librtspsrv/rtspsrv_epoll.h src/librtspsrv/rtspsrv_handler.h \
+ ../../..//inc/base/defines.h src/librtspsrv/rtspsrv_session.h \
+ src/librtspsrv/rtspsrv_nlist.h src/librtspsrv/rtspsrv_defines.h \
+ src/librtspsrv/rtspsrv_rtp.h src/librtspsrv/rtspsrv_adapter.h \
+ src/librtspsrv/rtspsrv_utils.h ../../..//inc/base/mem_manage.h \
+ ../../..//inc/sys/sys_netapi.h ../../..//inc/sys/sys_net.h
+src/librtspsrv/rtspsrv_nlist.o: src/librtspsrv/rtspsrv_nlist.c \
+ src/librtspsrv/rtspsrv_nlist.h src/librtspsrv/rtspsrv_defines.h \
+ ../../..//inc/base/mem_manage.h ../../..//inc/base/common.h \
+ ../../..//inc/base/defines.h ../../..//inc/base/cli.h
+src/librtspsrv/rtspsrv_stream.o: src/librtspsrv/rtspsrv_stream.c \
+ src/libavutil/avutil_time.h src/libavformat/avformat.h \
+ src/libavcodec/avcodec.h src/libavutil/avutil_samplefmt.h \
+ src/libavutil/avutil.h src/libavutil/avutil_common.h \
+ src/libavutil/avutil_attributes.h src/ffconfig.h src/ffconfig_gcc.h \
+ src/libavutil/avutil_version.h src/libavutil/avutil_macros.h \
+ src/libavutil/avutil_avconfig.h src/libavutil/avutil_intmath.h \
+ src/libavutil/avutil_mem.h src/libavutil/avutil_error.h \
+ src/libavutil/avutil_internal.h src/libavutil/avutil_timer.h \
+ src/libavutil/avutil_log.h src/libavutil/avutil_dict.h \
+ src/libavutil/avutil_libm.h src/libavutil/avutil_intfloat.h \
+ src/libavutil/avutil_rational.h src/libavutil/avutil_mathematics.h \
+ src/libavutil/avutil_pixfmt.h src/libavutil/avutil_avconfig.h \
+ src/libavutil/avutil_old_pix_fmts.h src/libavutil/avutil_attributes.h \
+ src/libavutil/avutil.h src/libavutil/avutil_buffer.h \
+ src/libavutil/avutil_dict.h src/libavutil/avutil_frame.h \
+ src/libavutil/avutil_buffer.h src/libavutil/avutil_log.h \
+ src/libavutil/avutil_pixfmt.h src/libavutil/avutil_rational.h \
+ src/libavcodec/avcodec_version.h src/libavutil/avutil_version.h \
+ src/libavutil/avutil_mem.h src/libavcodec/avcodec_old_codec_ids.h \
+ src/libavformat/avformat_avio.h src/libavutil/avutil_common.h \
+ src/libavformat/avformat_version.h src/libavformat/avformat_network.h \
+ src/libavutil/avutil_error.h src/libavformat/avformat_os_support.h \
+ src/libavformat/avformat_url.h ../../..//inc/base/mshead.h \
+ ../../..//inc/base/common.h ../../..//inc/base/defines.h \
+ ../../..//inc/base/cli.h src/librtspsrv/rtspsrv_utils.h \
+ ../../..//inc/base/defines.h src/librtspsrv/rtspsrv_handler.h \
+ src/librtspsrv/rtspsrv_session.h src/librtspsrv/rtspsrv_nlist.h \
+ src/librtspsrv/rtspsrv_defines.h src/librtspsrv/rtspsrv_rtp.h \
+ src/librtspsrv/rtspsrv_stream.h ../../..//inc/base/fifo.h \
+ ../../..//inc/base/mem_manage.h
+src/librtspsrv/rtspsrv_utils.o: src/librtspsrv/rtspsrv_utils.c \
+ src/libavutil/avutil_random_seed.h src/libavutil/avutil_log.h \
+ src/libavutil/avutil.h src/libavutil/avutil_common.h \
+ src/libavutil/avutil_attributes.h src/ffconfig.h src/ffconfig_gcc.h \
+ src/libavutil/avutil_version.h src/libavutil/avutil_macros.h \
+ src/libavutil/avutil_avconfig.h src/libavutil/avutil_intmath.h \
+ src/libavutil/avutil_mem.h src/libavutil/avutil_error.h \
+ src/libavutil/avutil_internal.h src/libavutil/avutil_timer.h \
+ src/libavutil/avutil_log.h src/libavutil/avutil_dict.h \
+ src/libavutil/avutil_libm.h src/libavutil/avutil_intfloat.h \
+ src/libavutil/avutil_rational.h src/libavutil/avutil_mathematics.h \
+ src/libavutil/avutil_pixfmt.h src/libavutil/avutil_avconfig.h \
+ src/libavutil/avutil_old_pix_fmts.h src/libavformat/avformat_network.h \
+ src/libavutil/avutil_error.h src/libavformat/avformat_os_support.h \
+ src/libavformat/avformat_avio.h src/libavutil/avutil_common.h \
+ src/libavutil/avutil_dict.h src/libavformat/avformat_version.h \
+ src/libavutil/avutil_version.h src/libavformat/avformat_url.h \
+ src/libavutil/avutil_time.h ../../..//inc/base/sstring.h \
+ ../../..//inc/base/common.h ../../..//inc/base/defines.h \
+ ../../..//inc/base/cli.h src/librtspsrv/rtspsrv_defines.h \
+ src/librtspsrv/rtspsrv_utils.h ../../..//inc/base/defines.h \
+ src/librtspsrv/rtspsrv_adapter.h ../../..//inc/base/mem_manage.h \
+ ../../..//inc/sys/cli_stat.h ../../..//inc/base/common.h
