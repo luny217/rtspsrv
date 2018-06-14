@@ -98,7 +98,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>pthread.lib;ws2_32.lib;cyassl.lib;rtspcli.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>pthread.lib;ws2_32.lib;cyassl.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -186,6 +186,8 @@
     <ClInclude Include="src\libavformat\avformat_avc.h" />
     <ClInclude Include="src\libavformat\avformat_avio.h" />
     <ClInclude Include="src\libavformat\avformat_avio_internal.h" />
+    <ClInclude Include="src\libavformat\avformat_http.h" />
+    <ClInclude Include="src\libavformat\avformat_httpauth.h" />
     <ClInclude Include="src\libavformat\avformat_internal.h" />
     <ClInclude Include="src\libavformat\avformat_metadata.h" />
     <ClInclude Include="src\libavformat\avformat_network.h" />
@@ -193,6 +195,13 @@
     <ClInclude Include="src\libavformat\avformat_os_support.h" />
     <ClInclude Include="src\libavformat\avformat_pcm.h" />
     <ClInclude Include="src\libavformat\avformat_rawdec.h" />
+    <ClInclude Include="src\libavformat\avformat_rtp.h" />
+    <ClInclude Include="src\libavformat\avformat_rtpdec.h" />
+    <ClInclude Include="src\libavformat\avformat_rtpdec_formats.h" />
+    <ClInclude Include="src\libavformat\avformat_rtp_h264_decoder.h" />
+    <ClInclude Include="src\libavformat\avformat_rtsp.h" />
+    <ClInclude Include="src\libavformat\avformat_rtspcodes.h" />
+    <ClInclude Include="src\libavformat\avformat_urldecode.h" />
     <ClInclude Include="src\libavformat\avformat_version.h" />
     <ClInclude Include="src\libavutil\avutil.h" />
     <ClInclude Include="src\libavutil\avutil_atomic.h" />
@@ -252,6 +261,7 @@
     <ClInclude Include="src\libepoll\msafd.h" />
     <ClInclude Include="src\libepoll\ntapi.h" />
     <ClInclude Include="src\libepoll\tree.h" />
+    <ClInclude Include="src\libnvrrtsp\session.h" />
     <ClInclude Include="src\librtspsrv\rtspsrv.h" />
     <ClInclude Include="src\librtspsrv\rtspsrv_adapter.h" />
     <ClInclude Include="src\librtspsrv\rtspsrv_defines.h" />
@@ -289,6 +299,8 @@
     <ClCompile Include="src\libavformat\avformat_format.c" />
     <ClCompile Include="src\libavformat\avformat_h264dec.c" />
     <ClCompile Include="src\libavformat\avformat_hevcdec.c" />
+    <ClCompile Include="src\libavformat\avformat_http.c" />
+    <ClCompile Include="src\libavformat\avformat_httpauth.c" />
     <ClCompile Include="src\libavformat\avformat_mux.c" />
     <ClCompile Include="src\libavformat\avformat_network.c" />
     <ClCompile Include="src\libavformat\avformat_options.c" />
@@ -297,6 +309,16 @@
     <ClCompile Include="src\libavformat\avformat_pcmdec.c" />
     <ClCompile Include="src\libavformat\avformat_pcmenc.c" />
     <ClCompile Include="src\libavformat\avformat_rawdec.c" />
+    <ClCompile Include="src\libavformat\avformat_rtp.c" />
+    <ClCompile Include="src\libavformat\avformat_rtpdec.c" />
+    <ClCompile Include="src\libavformat\avformat_rtpdec_h264.c" />
+    <ClCompile Include="src\libavformat\avformat_rtpdec_hevc.c" />
+    <ClCompile Include="src\libavformat\avformat_rtp_h264_decoder.c" />
+    <ClCompile Include="src\libavformat\avformat_rtsp.c" />
+    <ClCompile Include="src\libavformat\avformat_rtspdec.c" />
+    <ClCompile Include="src\libavformat\avformat_tcp.c" />
+    <ClCompile Include="src\libavformat\avformat_url.c" />
+    <ClCompile Include="src\libavformat\avformat_urldecode.c" />
     <ClCompile Include="src\libavformat\avformat_utils.c" />
     <ClCompile Include="src\libavutil\avutil_atomic.c" />
     <ClCompile Include="src\libavutil\avutil_avstring.c" />
@@ -331,6 +353,8 @@
     <ClCompile Include="src\libcommon\mshead.c" />
     <ClCompile Include="src\libcommon\sstring.c" />
     <ClCompile Include="src\libepoll\epoll.c" />
+    <ClCompile Include="src\libnvrrtsp\nvr_rtsp.c" />
+    <ClCompile Include="src\libnvrrtsp\session.c" />
     <ClCompile Include="src\librtspsrv\rtspsrv.c" />
     <ClCompile Include="src\librtspsrv\rtspsrv_adapter.c" />
     <ClCompile Include="src\librtspsrv\rtspsrv_epoll.c" />

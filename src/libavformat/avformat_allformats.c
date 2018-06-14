@@ -68,4 +68,12 @@ void av_register_all(void)
     /* protocols */
    
     REGISTER_PROTOCOL(FILE,			file);
+	
+	extern URLProtocol ff_http_protocol;
+    extern URLProtocol ff_tcp_protocol;
+
+    ffurl_register_protocol(&ff_http_protocol);
+    ffurl_register_protocol(&ff_tcp_protocol);
+
+    ff_register_rtp_dynamic_payload_handlers();
 }

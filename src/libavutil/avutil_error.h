@@ -62,7 +62,9 @@
 #define AVERROR_PATCHWELCOME       FFERRTAG( 'P','A','W','E') ///< Not yet implemented in FFmpeg, patches welcome
 #define AVERROR_PROTOCOL_NOT_FOUND FFERRTAG(0xF8,'P','R','O') ///< Protocol not found
 
-#define AVERROR_STREAM_NOT_FOUND   FFERRTAG(0xF8,'S','T','R') ///< Stream not found
+#define AVERROR_STREAM_NOT_FOUND   FFERRTAG(0xF8,'S','T','R') /* /< Stream not found */
+#define AVERROR_AUTH_FAIL          FFERRTAG('A','U','F','L')  /* luny 2015.07.16 */
+
 /**
  * This is semantically identical to AVERROR_BUG
  * it has been introduced in Libav after our AVERROR_BUG and with a modified value.

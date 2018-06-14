@@ -20,6 +20,8 @@
 #endif
 #include <sys/types.h>
 
+#include "libavcodec/avcodec_hevc.h"
+
 #include "avformat_network.h"
 #include "avutil_time.h"
 #include "avutil_avstring.h"
@@ -831,7 +833,7 @@ int rsrv_reply_options(rtsp_sessn_t * rss)
     ret = rsrv_tcp_write(rss->fd, rss->out_buf, rss->out_size);
     if (ret < 0)
     {
-        rsrv_log(AV_LOG_ERROR, "send OPTIONS reply error\n");
+        /*rsrv_log(AV_LOG_ERROR, "send OPTIONS reply error\n");*/
         return ERR_GENERIC;
     }
     else if (ret != rss->out_size)
@@ -876,7 +878,7 @@ int rsrv_do_reply(rtsp_sessn_t * rss, int ecode)
 
     /*av_log(NULL, AV_LOG_WARNING, "send [%d] reply to [%d]: \n%s", ecode, rss->fd, buf);*/
 
-    rss_cli = rss_get_cli(rss->cli_id);
+    rss_cli = rsrv_get_cli(rss->cli_id);
     if (rss_cli)
     {
         rss_cli->error_code = ecode;
@@ -1333,7 +1335,7 @@ int rsrv_do_describe(rtsp_srv_t * rs_srv, rtsp_sessn_t * rss, int ch_idx)
     _reply_describe(rss, url, descr);
     rss->state = RTSP_STATE_DESCRIBER;
 
-    rss_cli = rss_get_cli(rss->cli_id);
+    rss_cli = rsrv_get_cli(rss->cli_id);
     if (rss_cli)
     {
         rss_cli->fifo = rss->fifo;
@@ -2146,7 +2148,7 @@ int rsrv_do_accept(rtsp_srv_t * rs_srv, int ch_idx)
             return -1;
         }
 
-        rss_cli = rss_get_cli(rss->cli_id);
+        rss_cli = rsrv_get_cli(rss->cli_id);
         if (rss_cli)
         {
             sstrncpy((char *)rss_cli->rem_ip_str, (char *)rss->remote_ip_str, 16);

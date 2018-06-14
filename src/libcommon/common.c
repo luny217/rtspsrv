@@ -297,8 +297,8 @@ uint32 time_sec2time(uint32 sec, PSYSTIME psystm)
     time_t sec_tmp = sec;
 
     gmtime_s(&tm_tmp, &sec_tmp);
-    printf("sec(%d) => %d-%02d-%02d %02d:%02d:%02d\n", sec, 
-        tm_tmp.tm_year, tm_tmp.tm_mon, tm_tmp.tm_mday, tm_tmp.tm_hour, tm_tmp.tm_min, tm_tmp.tm_sec);
+    /*printf("sec(%d) => %d-%02d-%02d %02d:%02d:%02d\n", sec, 
+        tm_tmp.tm_year, tm_tmp.tm_mon, tm_tmp.tm_mday, tm_tmp.tm_hour, tm_tmp.tm_min, tm_tmp.tm_sec);*/
 #else
     gmtime_r((void *)&sec, &tm_tmp);
 #endif /* */

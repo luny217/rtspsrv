@@ -25,6 +25,9 @@
     <Filter Include="src\libcommon\include">
       <UniqueIdentifier>{e85f43bc-4eb1-497c-a97b-3cb48db5884f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\librtsp">
+      <UniqueIdentifier>{e331e474-94e8-4784-b1ca-6554bab96c63}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\libavcodec\avcodec_h264chroma.h">
@@ -372,6 +375,36 @@
     <ClInclude Include="src\librtspsrv\rtspsrv_nlist.h">
       <Filter>src\librtspsrv</Filter>
     </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_rtp_h264_decoder.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_rtpdec.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_rtpdec_formats.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_rtsp.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_rtspcodes.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_http.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_httpauth.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_rtp.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libnvrrtsp\session.h">
+      <Filter>src\librtsp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\libavformat\avformat_urldecode.h">
+      <Filter>src\libavformat</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\libavcodec\avcodec_allcodecs.c">
@@ -598,6 +631,48 @@
     </ClCompile>
     <ClCompile Include="src\libavcodec\avcodec_hevc_cabac.c">
       <Filter>src\libavcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_rtp_h264_decoder.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_rtpdec.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_rtpdec_h264.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_rtpdec_hevc.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_rtsp.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_rtspdec.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_tcp.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_http.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_httpauth.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_rtp.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libnvrrtsp\session.c">
+      <Filter>src\librtsp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libnvrrtsp\nvr_rtsp.c">
+      <Filter>src\librtsp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_url.c">
+      <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libavformat\avformat_urldecode.c">
+      <Filter>src\libavformat</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

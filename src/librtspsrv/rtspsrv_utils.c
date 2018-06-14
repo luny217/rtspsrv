@@ -18,6 +18,7 @@
 #include <netinet/tcp.h>
 #include <fcntl.h>
 #endif
+#include <libavcodec/avcodec_hevc.h>
 #include <libavutil/avutil_random_seed.h>
 #include <libavutil/avutil_log.h>
 #include <libavformat/avformat_network.h>
@@ -719,7 +720,7 @@ uint64_t rsrv_ntp_time(void)
     return (av_gettime() / 1000) * 1000 + NTP_OFFSET_US;
 }
 
-int tcp_do_one(const char * line, struct sockaddr_in * local, struct sockaddr_in * rem, int * rbuf_num, int * sbuf_num)
+int _tcp_do_one(const char * line, struct sockaddr_in * local, struct sockaddr_in * rem, int * rbuf_num, int * sbuf_num)
 {
     unsigned long rxq, txq, time_len, retr, inode;
     int num, local_port, rem_port, d, state, uid, timer_run, timeout;
@@ -766,7 +767,7 @@ int tcp_do_one(const char * line, struct sockaddr_in * local, struct sockaddr_in
 }
 
 
-int tcp_info(int sockfd, int * rbuf_num, int * sbuf_num)
+int rsrv_tcp_info(int sockfd, int * rbuf_num, int * sbuf_num)
 {
     FILE * procinfo;
 	char buffer[8192] = {0};
@@ -803,7 +804,7 @@ int tcp_info(int sockfd, int * rbuf_num, int * sbuf_num)
     {
         if (fgets(buffer, sizeof(buffer), procinfo))
         {
-            ret = tcp_do_one(buffer, &local, &rem, rbuf_num, sbuf_num);
+            ret = _tcp_do_one(buffer, &local, &rem, rbuf_num, sbuf_num);
         }
     }
     while (!feof(procinfo));
@@ -842,7 +843,7 @@ int rss_init_cli(void)
     return 0;
 }
 
-int rss_take_unused_cli(void)
+int rsrv_take_unused_cli(void)
 {
     if (++rsrv_info_idx >= RSRV_CLI_NUM)
     {
@@ -851,7 +852,7 @@ int rss_take_unused_cli(void)
     return rsrv_info_idx;
 }
 
-rsrv_cli_info_t * rss_get_cli(int idx)
+rsrv_cli_info_t * rsrv_get_cli(int idx)
 {
     if (idx >= RSRV_CLI_NUM || idx < 0 || _rtrv_cli_info == NULL)
     {
@@ -860,7 +861,7 @@ rsrv_cli_info_t * rss_get_cli(int idx)
     return &_rtrv_cli_info[idx];
 }
 
-int rss_clear_cli(void)
+int rsrv_clear_cli(void)
 {
     if (_rtrv_cli_info == NULL)
     {

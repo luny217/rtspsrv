@@ -197,6 +197,7 @@ enum H264NALUnitType
 };
 
 
+#if 0
 enum HevcNALUnitType
 {
     HEVC_NAL_TRAIL_N = 0,
@@ -225,6 +226,7 @@ enum HevcNALUnitType
     HEVC_NAL_SEI_PREFIX = 39,
     HEVC_NAL_SEI_SUFFIX = 40
 };
+#endif
 
 #endif
 

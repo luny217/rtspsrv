@@ -190,15 +190,15 @@ int rsrv_check_end_of_frame(int enc_type, char nal_byte, int * _nal_type);
 *****************************************************************************/
 uint64 rsrv_ntp_time(void);
 
-int tcp_info(int sockfd, int * rbuf_num, int * sbuf_num);
+int rsrv_tcp_info(int sockfd, int * rbuf_num, int * sbuf_num);
 
 int rss_init_cli(void);
 
-int rss_take_unused_cli(void);
+int rsrv_take_unused_cli(void);
 
-rsrv_cli_info_t * rss_get_cli(int fd);
+rsrv_cli_info_t * rsrv_get_cli(int fd);
 
-int rss_clear_cli(void);
+int rsrv_clear_cli(void);
 
 int rss_stat_device(char * line);
 

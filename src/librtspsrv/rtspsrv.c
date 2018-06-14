@@ -187,7 +187,7 @@ int rsrv_sessn_del(rtsp_srv_t * rs_srv, rtsp_sessn_t * rss, int ch_idx)
 
     trans = &rss->rtp_sessn.trans;
 
-    rss_cli = rss_get_cli(rss->cli_id);
+    rss_cli = rsrv_get_cli(rss->cli_id);
     if (rss_cli)
     {
         rss_cli->close_tm = av_gettime();
@@ -205,7 +205,7 @@ int rsrv_sessn_del(rtsp_srv_t * rs_srv, rtsp_sessn_t * rss, int ch_idx)
         rss_cli->try_snd_len = rss->try_snd_len;
 
         rss_cli->state = rss->state;
-        tcp_info(rss->fd, &rss_cli->rcvq_buf, &rss_cli->sndq_buf);
+        rsrv_tcp_info(rss->fd, &rss_cli->rcvq_buf, &rss_cli->sndq_buf);
         /*av_log(NULL, AV_LOG_WARNING, "[id:%d] rcvq_buf:%d sndq_buf:%d\n", rss->cli_id, rss_cli->rcvq_buf, rss_cli->sndq_buf);*/
     }
 
@@ -409,8 +409,8 @@ int rsrv_sessn_init(rtsp_sessn_t * rss, int fd, int ep_fd, int ch_idx)
 
     memset(rss->rtp_sessn.trans.wv_info.buf, 0x00, RTSP_WV_BUFSIZE);
 
-    rss->cli_id = rss_take_unused_cli();    
-    rss_cli = rss_get_cli(rss->cli_id);
+    rss->cli_id = rsrv_take_unused_cli();
+    rss_cli = rsrv_get_cli(rss->cli_id);
     if (rss_cli)
     {
         memset(rss_cli, 0x00, sizeof(rsrv_cli_info_t));

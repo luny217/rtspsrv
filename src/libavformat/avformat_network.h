@@ -72,6 +72,17 @@ int ff_neterrno(void);
 #include <poll.h>
 #endif
 
+typedef struct TCPContext
+{
+    const AVClass * class;
+    int fd;
+    int valid;
+    int listen;
+    int open_timeout;
+    int rw_timeout;
+    int listen_timeout;
+} TCPContext;
+
 int ff_socket_nonblock(int socket, int enable);
 
 extern int ff_network_inited_globally;

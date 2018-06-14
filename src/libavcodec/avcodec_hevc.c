@@ -27,11 +27,11 @@
 
 /* FIXME: This is adapted from ff_h264_decode_nal, avoiding duplication
  * between these functions would be nice. */
-int ff_hevc_extract_rbsp(HEVCContext *s, const uint8_t *src, int length,
-                         HEVCNAL *nal)
+int ff_hevc_extract_rbsp(HEVCContext * s, const uint8_t * src, int length,
+                         HEVCNAL * nal)
 {
     int i, si, di;
-    uint8_t *dst;
+    uint8_t * dst;
 
     s->skipped_bytes = 0;
 #define STARTCODE_TEST                                                  \
@@ -49,20 +49,22 @@ int ff_hevc_extract_rbsp(HEVCContext *s, const uint8_t *src, int length,
         while (src[i])                                                  \
             i++
 #if HAVE_FAST_64BIT
-    for (i = 0; i + 1 < length; i += 9) {
+    for (i = 0; i + 1 < length; i += 9)
+    {
         if (!((~AV_RN64A(src + i) &
-               (AV_RN64A(src + i) - 0x0100010001000101ULL)) &
-              0x8000800080008080ULL))
+                (AV_RN64A(src + i) - 0x0100010001000101ULL)) &
+                0x8000800080008080ULL))
             continue;
         FIND_FIRST_ZERO;
         STARTCODE_TEST;
         i -= 7;
     }
 #else
-    for (i = 0; i + 1 < length; i += 5) {
+    for (i = 0; i + 1 < length; i += 5)
+    {
         if (!((~AV_RN32A(src + i) &
-               (AV_RN32A(src + i) - 0x01000101U)) &
-              0x80008080U))
+                (AV_RN32A(src + i) - 0x01000101U)) &
+                0x80008080U))
             continue;
         FIND_FIRST_ZERO;
         STARTCODE_TEST;
@@ -70,7 +72,8 @@ int ff_hevc_extract_rbsp(HEVCContext *s, const uint8_t *src, int length,
     }
 #endif /* HAVE_FAST_64BIT */
 #else
-    for (i = 0; i + 1 < length; i += 2) {
+    for (i = 0; i + 1 < length; i += 2)
+    {
         if (src[i])
             continue;
         if (i > 0 && src[i - 1] == 0)
@@ -79,7 +82,8 @@ int ff_hevc_extract_rbsp(HEVCContext *s, const uint8_t *src, int length,
     }
 #endif /* HAVE_FAST_UNALIGNED */
 
-    if (i >= length - 1) { // no escaped 0
+    if (i >= length - 1)   // no escaped 0
+    {
         nal->data = src;
         nal->size = length;
         return length;
@@ -94,30 +98,37 @@ int ff_hevc_extract_rbsp(HEVCContext *s, const uint8_t *src, int length,
 
     memcpy(dst, src, i);
     si = di = i;
-    while (si + 2 < length) {
+    while (si + 2 < length)
+    {
         // remove escapes (very rare 1:2^22)
-        if (src[si + 2] > 3) {
+        if (src[si + 2] > 3)
+        {
             dst[di++] = src[si++];
             dst[di++] = src[si++];
-        } else if (src[si] == 0 && src[si + 1] == 0) {
-            if (src[si + 2] == 3) { // escape
+        }
+        else if (src[si] == 0 && src[si + 1] == 0)
+        {
+            if (src[si + 2] == 3)   // escape
+            {
                 dst[di++] = 0;
                 dst[di++] = 0;
                 si       += 3;
 
                 s->skipped_bytes++;
-                if (s->skipped_bytes_pos_size < s->skipped_bytes) {
+                if (s->skipped_bytes_pos_size < s->skipped_bytes)
+                {
                     s->skipped_bytes_pos_size *= 2;
                     av_reallocp_array(&s->skipped_bytes_pos,
-                            s->skipped_bytes_pos_size,
-                            sizeof(*s->skipped_bytes_pos));
+                                      s->skipped_bytes_pos_size,
+                                      sizeof(*s->skipped_bytes_pos));
                     if (!s->skipped_bytes_pos)
                         return AVERROR(ENOMEM);
                 }
                 if (s->skipped_bytes_pos)
-                    s->skipped_bytes_pos[s->skipped_bytes-1] = di - 1;
+                    s->skipped_bytes_pos[s->skipped_bytes - 1] = di - 1;
                 continue;
-            } else // next start code
+            }
+            else   // next start code
                 goto nsc;
         }
 
@@ -132,4 +143,76 @@ nsc:
     nal->data = dst;
     nal->size = di;
     return si;
+}
+int nal_to_rbsp(const uint8_t * nal_buf, int * nal_size, uint8_t * rbsp_buf, int * rbsp_size)
+{
+    int i;
+    int j     = 0;
+    int count = 0;
+
+    for (i = 1; i < *nal_size; i++)
+    {
+        /*  in NAL unit, 0x000000, 0x000001 or 0x000002 shall not occur at any byte-aligned position */
+        if ((count == 2) && (nal_buf[i] < 0x03))
+        {
+            return -1;
+        }
+
+        if ((count == 2) && (nal_buf[i] == 0x03))
+        {
+            /*  check the 4th byte after 0x000003, except when cabac_zero_word is used, in which case the last three bytes of this NAL unit must be 0x000003 */
+            if ((i < *nal_size - 1) && (nal_buf[i + 1] > 0x03))
+            {
+                return -1;
+            }
+
+            /*  if cabac_zero_word is used, the final byte of this NAL unit(0x03) is discarded, and the last two bytes of RBSP must be 0x0000 */
+            if (i == *nal_size - 1)
+            {
+                break;
+            }
+
+            i++;
+            count = 0;
+        }
+
+        if (j >= *rbsp_size)
+        {
+            /*  error, not enough space */
+            return -1;
+        }
+
+        rbsp_buf[j] = nal_buf[i];
+        if (nal_buf[i] == 0x00)
+        {
+            count++;
+        }
+        else
+        {
+            count = 0;
+        }
+        j++;
+    }
+
+    *nal_size = i;
+    *rbsp_size = j;
+    return j;
+}
+
+
+int ff_hevc_free_context(HEVCContext * s)
+{
+    int i;
+
+    if (s->avctx)
+    {
+        av_free(s->avctx);
+        s->avctx = NULL;
+    }
+
+    s->sps = NULL;
+    s->pps = NULL;
+    s->vps = NULL;
+
+    return 0;
 }
