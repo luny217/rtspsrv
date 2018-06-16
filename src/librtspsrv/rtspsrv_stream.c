@@ -343,7 +343,8 @@ int set_rtp_pack(rtp_info_t * rtp_info, uint32 enc_type, uint8 * nal_buf, uint32
 int _rtcp_send_sr(rtp_info_t * rinfo, int fd, sint64 ntp_time)
 {
     char rtcp_buf[128] = { 0 };
-    uint32 rtp_ts = 0, val;
+	uint32 rtp_ts = 0;
+	sint32 val = 0;
     uint64 val64;
 
     /*  Sender Report */

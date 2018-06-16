@@ -84,6 +84,7 @@
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>..\..\..\tool\cyassl;.\src\librtspsrv;.\lib\win32;.\src\libavutil;.\src\libavformat;.\src\libavcodec;.\src;.\src\libcommon\include;.\src\glib;$(IncludePath)</IncludePath>
     <LibraryPath>lib\win32;$(LibraryPath)</LibraryPath>
+    <OutDir>bin\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -264,9 +265,11 @@
     <ClInclude Include="src\libnvrrtsp\session.h" />
     <ClInclude Include="src\librtspsrv\rtspsrv.h" />
     <ClInclude Include="src\librtspsrv\rtspsrv_adapter.h" />
+    <ClInclude Include="src\librtspsrv\rtspsrv_config.h" />
     <ClInclude Include="src\librtspsrv\rtspsrv_defines.h" />
     <ClInclude Include="src\librtspsrv\rtspsrv_epoll.h" />
     <ClInclude Include="src\librtspsrv\rtspsrv_handler.h" />
+    <ClInclude Include="src\librtspsrv\rtspsrv_json.h" />
     <ClInclude Include="src\librtspsrv\rtspsrv_nlist.h" />
     <ClInclude Include="src\librtspsrv\rtspsrv_rtp.h" />
     <ClInclude Include="src\librtspsrv\rtspsrv_session.h" />
@@ -357,8 +360,10 @@
     <ClCompile Include="src\libnvrrtsp\session.c" />
     <ClCompile Include="src\librtspsrv\rtspsrv.c" />
     <ClCompile Include="src\librtspsrv\rtspsrv_adapter.c" />
+    <ClCompile Include="src\librtspsrv\rtspsrv_config.c" />
     <ClCompile Include="src\librtspsrv\rtspsrv_epoll.c" />
     <ClCompile Include="src\librtspsrv\rtspsrv_handler.c" />
+    <ClCompile Include="src\librtspsrv\rtspsrv_json.c" />
     <ClCompile Include="src\librtspsrv\rtspsrv_nlist.c" />
     <ClCompile Include="src\librtspsrv\rtspsrv_stream.c" />
     <ClCompile Include="src\librtspsrv\rtspsrv_utils.c" />

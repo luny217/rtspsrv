@@ -1,0 +1,11 @@
+{
+	"main_uri": "rtsp://192.168.30.91:554/Streaming/Channels/1?transportmode=unicast&profile=Profile_1",
+	"main_usr": "admin",
+	"main_pwd": "888888",
+	"sub_uri": "rtsp://192.168.30.91:554/Streaming/Channels/2?transportmode=unicast&profile=Profile_1",
+	"sub_usr": "admin",
+	"sub_pwd": "888888",
+	"ip_prefix": "192.168.1.",
+	"ip_begin": 201,
+	"ip_num": 32	
+}

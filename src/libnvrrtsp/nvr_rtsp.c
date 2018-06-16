@@ -1047,7 +1047,7 @@ int rtsp_close(int fd)
         ret = RTSP_ERR_PARAM;
         goto ERR_RSS;
     }
-    av_log(NULL, AV_LOG_WARNING, "[fd:%d id:%d]rss_get_session: %lld ms\n", rs_info->tcp_fd, rs_info->self_idx, (av_gettime_relative() - start) / 1000);
+    av_log(NULL, AV_LOG_INFO, "[fd:%d id:%d]rss_get_session: %lld ms\n", rs_info->tcp_fd, rs_info->self_idx, (av_gettime_relative() - start) / 1000);
 
     rs_info->state = RSESSION_STATE_CLOSED;
     rs_info->close_time = now;
@@ -1065,8 +1065,8 @@ int rtsp_close(int fd)
         ret = RTSP_ERR_LOCK_SESSION;
         goto ERR_LOCK_SESSION;
     }
-    av_log(NULL, AV_LOG_WARNING, TIME_STR, SYSTIME4TM_FMT(now_tm));
-    av_log(NULL, AV_LOG_WARNING, "[fd:%d id:%d]rss_lock_session: %lld ms\n", rs_info->tcp_fd, rs_info->self_idx, (av_gettime_relative() - start) / 1000);
+    av_log(NULL, AV_LOG_INFO, TIME_STR, SYSTIME4TM_FMT(now_tm));
+    av_log(NULL, AV_LOG_INFO, "[fd:%d id:%d]rss_lock_session: %lld ms\n", rs_info->tcp_fd, rs_info->self_idx, (av_gettime_relative() - start) / 1000);
 
     /* start = av_gettime_relative(); */
     if (rss_lock_session_cmd(fd) < 0)
@@ -1125,13 +1125,13 @@ int rtsp_close(int fd)
             }
         }
         ff_h264_free_context(&fmt_ctx->h264_ctx);
-        av_log(NULL, AV_LOG_WARNING, "[fd:%d id:%d]h264_free: %lld ms\n", rs_info->tcp_fd, rs_info->self_idx, (av_gettime_relative() - start) / 1000);
+        av_log(NULL, AV_LOG_INFO, "[fd:%d id:%d]h264_free: %lld ms\n", rs_info->tcp_fd, rs_info->self_idx, (av_gettime_relative() - start) / 1000);
         ff_hevc_free_context(&fmt_ctx->hevc_ctx);
-        av_log(NULL, AV_LOG_WARNING, "[fd:%d id:%d]hevc_free: %lld ms\n", rs_info->tcp_fd, rs_info->self_idx, (av_gettime_relative() - start) / 1000);
+        av_log(NULL, AV_LOG_INFO, "[fd:%d id:%d]hevc_free: %lld ms\n", rs_info->tcp_fd, rs_info->self_idx, (av_gettime_relative() - start) / 1000);
         avformat_close_input(&fmt_ctx);
-        av_log(NULL, AV_LOG_WARNING, "[fd:%d id:%d]avf_close: %lld ms\n", rs_info->tcp_fd, rs_info->self_idx, (av_gettime_relative() - start) / 1000);
+        av_log(NULL, AV_LOG_INFO, "[fd:%d id:%d]avf_close: %lld ms\n", rs_info->tcp_fd, rs_info->self_idx, (av_gettime_relative() - start) / 1000);
         avformat_free_context(fmt_ctx);
-        av_log(NULL, AV_LOG_WARNING, "[fd:%d id:%d]avf_free: %lld ms\n", rs_info->tcp_fd, rs_info->self_idx, (av_gettime_relative() - start) / 1000);
+        av_log(NULL, AV_LOG_INFO, "[fd:%d id:%d]avf_free: %lld ms\n", rs_info->tcp_fd, rs_info->self_idx, (av_gettime_relative() - start) / 1000);
         rs_info->fmt_ctx = NULL;
     }
     data_ready[rs_info->self_idx / DATA_MASK_BITS] &= ~(1 << (rs_info->self_idx % DATA_MASK_BITS));
@@ -1304,11 +1304,12 @@ restart:
                             recv_size = recv(_fd, buff_info.buff[0].pbuff, buff_info.buff[0].size, 0);
                             if (recv_size <= 0)
                             {
-                                if ((errno == EAGAIN))
+                                if (ff_neterrno() == AVERROR(EAGAIN) || ff_neterrno() == AVERROR(EINTR))
                                 {
-                                    /* av_log(NULL, AV_LOG_ERROR,  "fd = %d free = %d \n", _fd, buff_info.buff[0].size); */
+									av_log(NULL, AV_LOG_WARNING, "fd = %d err = %d \n", _fd, ff_neterrno());
+									continue;
                                 }
-                                /* perror("[2-0]"); */
+                                perror("[2-0]");
                                 goto done;
                             }
 
@@ -1332,11 +1333,12 @@ restart:
                                     recv_size = recv(_fd, buff_info.buff[1].pbuff, buff_info.buff[1].size, 0);
                                     if (recv_size <= 0)
                                     {
-                                        if ((errno == EAGAIN))
+                                        if (ff_neterrno() == AVERROR(EAGAIN) || ff_neterrno() == AVERROR(EINTR))
                                         {
-                                            /* av_log(NULL, AV_LOG_ERROR, "[%d]fd = %d free = %d \n", rs_info->self_idx, _fd, buff_info.buff[1].size); */
+                                           av_log(NULL, AV_LOG_WARNING, "[%d]fd = %d free = %d \n", ff_neterrno(), _fd, buff_info.buff[1].size);
+										   continue;
                                         }
-                                        /* perror("[2-1]"); */
+                                        perror("[2-1]");
                                         goto done;
                                     }
 
@@ -1391,11 +1393,12 @@ restart:
                             recv_size = recv(_fd, buff_info.buff[0].pbuff, buff_info.buff[0].size, 0);
                             if (recv_size <= 0)
                             {
-                                if ((errno == EAGAIN))
+                                if (ff_neterrno() == AVERROR(EAGAIN) || ff_neterrno() == AVERROR(EINTR))
                                 {
-                                    /* av_log(NULL, AV_LOG_ERROR, "[%d]fd = %d free = %d ", rs_info->self_idx, _fd, buff_info.buff[0].size); */
+                                    av_log(NULL, AV_LOG_WARNING, "[%d]fd = %d free = %d ", ff_neterrno(), _fd, buff_info.buff[0].size);
+									continue;
                                 }
-                                /* perror("[1-0]"); */
+                                perror("[1-0]");
                                 goto done;
                             }
 
@@ -1474,7 +1477,7 @@ done:
                     {
                         continue;
                     }
-                    av_log(NULL, AV_LOG_INFO, "fd:%d ret:%d\n", _fd, recv_size);
+                    av_log(NULL, AV_LOG_ERROR, "fd:%d ret:%d\n", _fd, recv_size);
                     epoll_del(epollfd, rs_info);
                 }
                 else if (recv_size == 0)

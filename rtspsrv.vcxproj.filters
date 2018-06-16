@@ -405,6 +405,12 @@
     <ClInclude Include="src\libavformat\avformat_urldecode.h">
       <Filter>src\libavformat</Filter>
     </ClInclude>
+    <ClInclude Include="src\librtspsrv\rtspsrv_config.h">
+      <Filter>src\librtspsrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\librtspsrv\rtspsrv_json.h">
+      <Filter>src\librtspsrv</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\libavcodec\avcodec_allcodecs.c">
@@ -673,6 +679,12 @@
     </ClCompile>
     <ClCompile Include="src\libavformat\avformat_urldecode.c">
       <Filter>src\libavformat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\librtspsrv\rtspsrv_config.c">
+      <Filter>src\librtspsrv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\librtspsrv\rtspsrv_json.c">
+      <Filter>src\librtspsrv</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
